@@ -1,0 +1,20 @@
+ Kafka tutorial 
+********************************
+kafka command on windows (go to folder where kafka install c:\kafka_2.11-2.4.0)
+from kafka home directory start the zookeeper server batch file and pass the zookeeper.properties as an argument 
+1)start zookeeper  : bin\windows\zookeeper-server-start.bat config\zookeeper.properties
+
+2)start kafka broker :from kafka home directory start the kafka server batch file and pass the server.properties as an argument
+ cmd :bin\windows\kafka-server-start.bat  config\server.properties
+
+3)create topic : from kafka home directory 
+ 
+ cmd :bin\windows\kafka-topic.bat --create --bootstrap-server localhost:9092  --partitions 1 --replication-factor 1 --topic 
+ to see how many topic already created 
+ cmd : bin\windows\kafka-topic.bat --list --bootstrap-server localhost:9092
+ 
+4) create producer : 
+cmd:bin\windows\kafka-console-producer.bat --topic youtube --bootstrap-server localhost:9092
+
+5) create consumer :
+cmd: bin\windows\kafka-console-consumer.bat --topic youtube --from-beginning bootstrap-server localhost:9092
